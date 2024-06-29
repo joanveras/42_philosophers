@@ -6,7 +6,7 @@
 /*   By: jveras <jveras@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 13:21:15 by jveras            #+#    #+#             */
-/*   Updated: 2024/06/27 14:24:41 by jveras           ###   ########.fr       */
+/*   Updated: 2024/06/29 09:44:33 by jveras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ typedef struct	s_data
 	unsigned long	time_to_eat;
 	unsigned long	time_to_sleep;
 	unsigned long	num_of_meals;
-	bool			all_threads_ready;
 	pthread_mutex_t	data_mtx;
 }	t_data;
 

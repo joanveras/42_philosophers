@@ -6,7 +6,7 @@
 /*   By: jveras <jveras@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 10:33:28 by jveras            #+#    #+#             */
-/*   Updated: 2024/06/27 15:47:20 by jveras           ###   ########.fr       */
+/*   Updated: 2024/06/29 09:44:26 by jveras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ void	init_data(t_data **data, char **argv)
 		return ;
 	}
 	(*data)->num_of_meals = ft_atol(argv[5]);
-	(*data)->all_threads_ready = false;
 	pthread_mutex_init(&(*data)->data_mtx, NULL);
 }
 
