@@ -20,6 +20,8 @@ void	*dinner_simulation(void *sopher)
 	philo = (t_philo *)sopher;
 	while (true)
 	{
+		if (philo->id % 2 == 0)
+			usleep(philo->data->time_to_eat);
 		philo_to_eat(philo);
 		philo_to_sleep(philo);
 		/* philo_to_think(philo); */

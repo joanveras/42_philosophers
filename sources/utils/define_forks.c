@@ -11,18 +11,19 @@
 /* ************************************************************************** */
 
 #include "../../includes/structs.h"
-#include "../../includes/functions.h"
 
-void	define_forks(t_fork **first_fork, t_fork **second_fork, t_philo *philo)
+void define_forks(t_fork **first_fork, t_fork **second_fork, t_philo *philo)
 {
-	if (philo->left_fork->fork_id < philo->right_fork->fork_id)
+	if ((unsigned long)philo->id == philo->data->num_of_philos - 1)
 	{
-		*first_fork = philo->left_fork;
-		*second_fork = philo->right_fork;
+		*first_fork = &philo->data->forks[(philo->id + 1) % \
+			philo->data->num_of_philos];
+		*second_fork = &philo->data->forks[philo->id];
 	}
 	else
 	{
-		*first_fork = philo->right_fork;
-		*second_fork = philo->left_fork;
+		*first_fork = &philo->data->forks[philo->id];
+		*second_fork = &philo->data->forks[(philo->id + 1) % \
+			philo->data->num_of_philos];
 	}
 }
