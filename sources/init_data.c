@@ -73,7 +73,7 @@ void	init_philos(t_data **data)
 		current_philo->id = i + 1;
 		current_philo->meals = 0;
 		current_philo->data = *data;
-		dessign_forks(current_philo, (*data)->forks, i);
+		//dessign_forks(current_philo, (*data)->forks, i);
 		i++;
 	}
 }

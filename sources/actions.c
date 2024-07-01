@@ -19,21 +19,21 @@ void	philo_to_eat(t_philo *philo)
 	t_fork	*first_fork;
 	t_fork	*second_fork;
 
-	/* pthread_mutex_lock(&philo->data->data_mtx); */
-
 	define_forks(&first_fork, &second_fork, philo);
 	pthread_mutex_lock(&first_fork->fork);
 	printf("%ld %d has taken a fork\n", get_time(), philo->id);
 	pthread_mutex_lock(&second_fork->fork);
 	printf("%ld %d has taken a fork\n", get_time(), philo->id);
 
+	pthread_mutex_lock(&philo->data->data_mtx);
+
 	printf("%ld %d is eating\n", get_time(), philo->id);
 	usleep(philo->data->time_to_eat);
+	
+	pthread_mutex_unlock(&philo->data->data_mtx);
 
 	pthread_mutex_unlock(&first_fork->fork);
 	pthread_mutex_unlock(&second_fork->fork);
-
-	/* pthread_mutex_unlock(&philo->data->data_mtx); */
 }
 
 void	philo_to_sleep(t_philo *philo)

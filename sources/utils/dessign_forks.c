@@ -12,6 +12,7 @@
 
 #include "../../includes/structs.h"
 
+/*
 void	dessign_forks(t_philo *philo, t_fork *fork, int philo_pos)
 {
 	int	philo_num;
@@ -25,3 +26,4 @@ void	dessign_forks(t_philo *philo, t_fork *fork, int philo_pos)
 		philo->left_fork = fork + ((philo_pos + 1) % philo_num);
 	}
 }
+*/
