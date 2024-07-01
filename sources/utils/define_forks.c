@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "../../includes/structs.h"
+#include "../../includes/functions.h"
 
 void	define_forks(t_fork **first_fork, t_fork **second_fork, t_philo *philo)
 {
