@@ -3,7 +3,6 @@
 NAME = philosophers.a
 
 SRCS = $(wildcard sources/*.c) \
-       $(wildcard sources/libft/*.c) \
        $(wildcard sources/utils/*.c)
 
 OBJS = $(SRCS:.c=.o)
