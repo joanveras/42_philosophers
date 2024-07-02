@@ -13,6 +13,7 @@
 #ifndef STRUCTS_H
 # define STRUCTS_H
 
+# include <stdint.h>
 # include <pthread.h>
 # include <stdbool.h>
 
@@ -38,6 +39,7 @@ typedef struct	s_data
 {
 	t_fork			*forks;
 	t_philo			*philos;
+	uint64_t		simulation_start_time;
 	unsigned long	num_of_philos;
 	unsigned long	time_to_die;
 	unsigned long	time_to_eat;

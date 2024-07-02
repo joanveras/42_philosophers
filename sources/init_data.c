@@ -6,7 +6,7 @@
 /*   By: jveras <jveras@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 10:33:28 by jveras            #+#    #+#             */
-/*   Updated: 2024/06/29 09:44:26 by jveras           ###   ########.fr       */
+/*   Updated: 2024/07/01 23:37:16 by jveras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void	init_data(t_data **data, char **argv)
 		return ;
 	}
 	(*data)->num_of_meals = ft_atol(argv[5]);
+	(*data)->simulation_start_time = 0;
 	pthread_mutex_init(&(*data)->data_mtx, NULL);
 }
 
@@ -73,7 +74,6 @@ void	init_philos(t_data **data)
 		current_philo->id = i + 1;
 		current_philo->meals = 0;
 		current_philo->data = *data;
-		//dessign_forks(current_philo, (*data)->forks, i);
 		i++;
 	}
 }

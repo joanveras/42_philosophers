@@ -6,7 +6,7 @@
 /*   By: jveras <jveras@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 10:08:28 by jveras            #+#    #+#             */
-/*   Updated: 2024/06/29 09:48:42 by jveras           ###   ########.fr       */
+/*   Updated: 2024/07/01 23:41:11 by jveras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	*dinner_simulation(void *sopher)
 			usleep(philo->data->time_to_eat);
 		philo_to_eat(philo);
 		philo_to_sleep(philo);
-		/* philo_to_think(philo); */
+		philo_to_think(philo);
 	}
 }
 
@@ -32,6 +32,7 @@ void	dinner_start(t_data *data)
 {
 	if (!data->num_of_meals)
 		return ;
+	data->simulation_start_time = get_time();
 	create_threads(data, dinner_simulation);
 	join_threads(data);
 }

@@ -6,7 +6,7 @@
 /*   By: jveras <jveras@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 09:14:16 by jveras            #+#    #+#             */
-/*   Updated: 2024/06/29 09:37:26 by jveras           ###   ########.fr       */
+/*   Updated: 2024/07/01 23:28:55 by jveras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,13 @@ bool			arguments_err(int argc, char **argv);
 bool			get_bool(pthread_mutex_t *mtx, bool *value);
 
 void			init_forks(t_data **data);
+void			print_eat(t_philo *philo);
 void			dinner_start(t_data *data);
 void			init_philos(t_data **data);
 void			join_threads(t_data *data);
+void			print_fork(t_philo *philo);
+void			print_sleep(t_philo *philo);
+void			print_think(t_philo *philo);
 void			philo_to_eat(t_philo *philo);
 void			wait_all_threads(t_data *data);
 void			philo_to_sleep(t_philo *philo);
