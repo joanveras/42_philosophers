@@ -6,7 +6,7 @@
 /*   By: jveras <jveras@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 10:08:28 by jveras            #+#    #+#             */
-/*   Updated: 2024/07/01 23:41:11 by jveras           ###   ########.fr       */
+/*   Updated: 2024/07/08 13:04:20 by jveras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	*dinner_simulation(void *sopher)
 	{
 		if (philo->id % 2 == 0)
 			usleep(philo->data->time_to_eat);
+
 		philo_to_eat(philo);
 		philo_to_sleep(philo);
 		philo_to_think(philo);

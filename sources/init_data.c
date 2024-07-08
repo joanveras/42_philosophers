@@ -6,7 +6,7 @@
 /*   By: jveras <jveras@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 10:33:28 by jveras            #+#    #+#             */
-/*   Updated: 2024/07/01 23:37:16 by jveras           ###   ########.fr       */
+/*   Updated: 2024/07/08 10:24:39 by jveras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	init_forks(t_data **data)
 	while (i < (*data)->num_of_philos)
 	{
 		current_fork = &(*data)->forks[i];
-		current_fork->fork_id = i;
+		(*data)->forks[i].fork_id = i + 1;
 		pthread_mutex_init(&current_fork->fork, NULL);
 		i++;
 	}
@@ -73,6 +73,10 @@ void	init_philos(t_data **data)
 		current_philo = &(*data)->philos[i];
 		current_philo->id = i + 1;
 		current_philo->meals = 0;
+		current_philo->last_meal = 0;
+		current_philo->left_fork = &(*data)->forks[i];
+		current_philo->right_fork = &(*data)->forks[((i + 1) % \
+			(*data)->num_of_philos)];
 		current_philo->data = *data;
 		i++;
 	}

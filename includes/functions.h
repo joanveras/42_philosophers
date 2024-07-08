@@ -6,7 +6,7 @@
 /*   By: jveras <jveras@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 09:14:16 by jveras            #+#    #+#             */
-/*   Updated: 2024/07/01 23:28:55 by jveras           ###   ########.fr       */
+/*   Updated: 2024/07/08 14:53:46 by jveras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,11 @@ void			print_fork(t_philo *philo);
 void			print_sleep(t_philo *philo);
 void			print_think(t_philo *philo);
 void			philo_to_eat(t_philo *philo);
-void			wait_all_threads(t_data *data);
 void			philo_to_sleep(t_philo *philo);
 void			philo_to_think(t_philo *philo);
 void			init_data(t_data **data, char **argv);
-void			dessign_forks(t_philo *philo, t_fork *fork, int pos);
-void			set_bool(pthread_mutex_t *mtx, bool *dest, bool value);
 void			create_threads(t_data *data, void *(*routine)(void *));
-void			define_forks(t_fork **first_fork, t_fork **second_fork,
+void			define_forks(t_fork **first_fork, t_fork **second_fork, \
 				t_philo *philo);
 
 long			ft_atol(const char *nptr);

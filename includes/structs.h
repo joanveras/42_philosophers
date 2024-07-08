@@ -6,7 +6,7 @@
 /*   By: jveras <jveras@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 13:21:15 by jveras            #+#    #+#             */
-/*   Updated: 2024/06/29 09:44:33 by jveras           ###   ########.fr       */
+/*   Updated: 2024/07/08 07:42:32 by jveras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,10 @@ typedef struct s_philo
 {
 	int				id;
 	long			meals;
+	long			last_meal;
 	pthread_t		philo;
-	t_fork			*right_fork;
 	t_fork			*left_fork;
+	t_fork			*right_fork;
 	t_data			*data;
 }	t_philo;
 
