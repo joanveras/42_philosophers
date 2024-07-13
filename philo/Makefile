@@ -48,7 +48,7 @@ clean:
 fclean: clean
 	@echo "$(RED)Cleaning all files...$(NC)"
 	@$(RM) $(NAME)
-	@$(RM) philosophers
+	@$(RM) philo
 
 re: fclean all
 
