@@ -6,7 +6,7 @@
 /*   By: jveras <jveras@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 10:41:39 by jveras            #+#    #+#             */
-/*   Updated: 2024/07/08 11:01:13 by jveras           ###   ########.fr       */
+/*   Updated: 2024/07/13 13:24:27 by jveras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 void	create_threads(t_data *data, void *(*routine)(void *))
 {
 	unsigned long	i;
-	
+
 	i = 0;
 	while (i < data->num_of_philos)
 	{

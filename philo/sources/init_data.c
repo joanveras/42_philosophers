@@ -6,7 +6,7 @@
 /*   By: jveras <jveras@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 10:33:28 by jveras            #+#    #+#             */
-/*   Updated: 2024/07/08 10:24:39 by jveras           ###   ########.fr       */
+/*   Updated: 2024/07/13 13:23:35 by jveras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,23 +22,24 @@ void	init_data(t_data **data, char **argv)
 		exit(EXIT_FAILURE);
 	}
 	(*data)->num_of_philos = ft_atol(argv[1]);
-	(*data)->time_to_die = ft_atol(argv[2]) * 1000;
+	(*data)->time_to_die = ft_atol(argv[2]);
 	(*data)->time_to_eat = ft_atol(argv[3]) * 1000;
 	(*data)->time_to_sleep = ft_atol(argv[4]) * 1000;
+	(*data)->simulation_start_time = 0;
+	(*data)->philos_alive = true;
+	pthread_mutex_init(&(*data)->data_mtx, NULL);
 	if (!argv[5])
 	{
 		(*data)->num_of_meals = 0;
 		return ;
 	}
 	(*data)->num_of_meals = ft_atol(argv[5]);
-	(*data)->simulation_start_time = 0;
-	pthread_mutex_init(&(*data)->data_mtx, NULL);
 }
 
 void	init_forks(t_data **data)
 {
 	unsigned long	i;
-	t_fork	*current_fork;
+	t_fork			*current_fork;
 
 	(*data)->forks = malloc(sizeof(t_fork) * (*data)->num_of_philos);
 	if (!(*data)->forks)
@@ -59,7 +60,7 @@ void	init_forks(t_data **data)
 void	init_philos(t_data **data)
 {
 	unsigned long	i;
-	t_philo	*current_philo;
+	t_philo			*current_philo;
 
 	(*data)->philos = malloc(sizeof(t_philo) * (*data)->num_of_philos);
 	if (!(*data)->philos)

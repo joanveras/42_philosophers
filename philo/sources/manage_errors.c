@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   manage_errors_utils.c                              :+:      :+:    :+:   */
+/*   manage_errors.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jveras <jveras@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 09:28:06 by jveras            #+#    #+#             */
-/*   Updated: 2024/06/21 09:26:50 by jveras           ###   ########.fr       */
+/*   Updated: 2024/07/09 08:40:18 by jveras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,29 @@ bool	arguments_err(int argc, char **argv)
 	return (false);
 }
 
+static bool	check_max_int(t_data *data)
+{
+	if (data->num_of_meals > 2147483647)
+		return (true);
+	else if (data->num_of_philos > 2147483647)
+		return (true);
+	else if (data->time_to_die > 2147483647)
+		return (true);
+	else if (data->time_to_sleep > 2147483647)
+		return (true);
+	else if (data->time_to_eat > 2147483647)
+		return (true);
+	return (false);
+}
+
 bool	handle_bad_cases(t_data *data)
-{	
-	if (data->num_of_philos > 200)
+{
+	if (check_max_int(data))
+	{
+		ft_putstr_fd("error: MAX_INT argument\n", STDERR_FILENO);
+		return (true);
+	}
+	else if (data->num_of_philos > 200)
 	{
 		ft_putstr_fd("error: bad number of philosophers\n", STDERR_FILENO);
 		return (true);

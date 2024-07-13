@@ -1,6 +1,6 @@
 ### Variables
 
-NAME = philosophers.a
+NAME = philo.a
 
 SRCS = $(wildcard sources/*.c) \
        $(wildcard sources/utils/*.c)
@@ -28,7 +28,7 @@ $(NAME): $(OBJS) main.o
 	@echo "$(BLUE)Creating static library...$(NC)"
 	@ar rc $(NAME) $(OBJS)
 	@echo "$(GREEN)Linking executable...$(NC)"
-	@$(CC) $(CFLAGS) main.o $(NAME) -o philosophers
+	@$(CC) $(CFLAGS) main.o $(NAME) -o philo
 	@echo "$(GREEN)$(BLINK)Build successful!$(RESET)$(NC)"
 
 main.o: main.c
