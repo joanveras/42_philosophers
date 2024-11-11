@@ -6,18 +6,19 @@
 /*   By: jveras <jveras@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 09:14:16 by jveras            #+#    #+#             */
-/*   Updated: 2024/07/13 13:26:54 by jveras           ###   ########.fr       */
+/*   Updated: 2024/11/11 11:52:23 by jveras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FUNCTIONS_H
 # define FUNCTIONS_H
 
-# include "libft.h"
 # include "structs.h"
 
 # include <stdio.h>
 # include <stdint.h>
+# include <unistd.h>
+# include <stdlib.h>
 # include <stdbool.h>
 # include <sys/time.h>
 
@@ -27,6 +28,8 @@ bool		check_all_alive(t_data *data);
 bool		handle_bad_cases(t_data *data);
 bool		check_all_satisfy(t_philo *philo);
 bool		arguments_err(int argc, char **argv);
+
+int			ft_isdigit(int c);
 
 void		free_data(t_data *data);
 void		init_forks(t_data **data);
@@ -38,6 +41,7 @@ void		join_threads(t_data *data);
 void		print_fork(t_philo *philo);
 void		print_sleep(t_philo *philo);
 void		print_think(t_philo *philo);
+void		ft_putstr_fd(char *s, int fd);
 void		philo_to_sleep(t_philo *philo);
 void		philo_to_think(t_philo *philo);
 void		init_data(t_data **data, char **argv);
